@@ -1,0 +1,150 @@
+---
+layout: default
+---
+
+<header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/60x60/FF6B35/FFFFFF?text=AGRT" alt="AGRT Logo">
+                <span class="logo-text">Anton Griev Racing Team</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ '/' | relative_url }}" data-translate="nav.home">Главная</a></li>
+                <li><a href="{{ '/about.html' | relative_url }}" data-translate="nav.about">О команде</a></li>
+                <li><a href="{{ '/services.html' | relative_url }}" data-translate="nav.services">Услуги</a></li>
+                <li><a href="{{ '/racers.html' | relative_url }}" data-translate="nav.racers">Гонщики</a></li>
+                <li><a href="{{ '/championships.html' | relative_url }}" data-translate="nav.championships">Наши чемпионаты</a></li>
+                <li><a href="{{ '/participation.html' | relative_url }}" data-translate="nav.participation">Участие</a></li>
+                <li><a href="{{ '/sponsors.html' | relative_url }}" data-translate="nav.sponsors">Спонсорам</a></li>
+                <li><a href="{{ '/contacts.html' | relative_url }}" data-translate="nav.contacts">Контакты</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header">
+        <div class="container">
+            <h1>{{ page.title }}</h1>
+            <p class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d.%m.%Y" }}</time>
+                {% if page.author %} • {{ page.author }}{% endif %}
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <article class="post-content">
+                {{ content }}
+            </article>
+            
+            <div class="post-navigation">
+                {% if page.previous %}
+                    <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline">← Предыдущая новость</a>
+                {% endif %}
+                {% if page.next %}
+                    <a href="{{ page.next.url | relative_url }}" class="btn btn-outline">Следующая новость →</a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Anton Griev Racing Team</h4>
+                <p data-translate="footer.teamDescription">Профессиональная команда двухколёсного мотоспорта</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-translate="common.quickLinks">Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="{{ '/about.html' | relative_url }}" data-translate="nav.about">О команде</a></li>
+                    <li><a href="{{ '/racers.html' | relative_url }}" data-translate="nav.racers">Гонщики</a></li>
+                    <li><a href="{{ '/championships.html' | relative_url }}" data-translate="nav.championships">Чемпионаты</a></li>
+                    <li><a href="{{ '/sponsors.html' | relative_url }}" data-translate="nav.sponsors">Спонсорам</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-translate="nav.contacts">Контакты</h4>
+                <p><span data-translate="common.email">Email</span>: info@antongrievracing.com</p>
+                <p><span data-translate="common.phone">Телефон</span>: +381 XX XXX XXXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: "%Y" }} Anton Griev Racing Team. <span data-translate="common.allRightsReserved">Все права защищены</span>.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }));
+</script>
+
+<style>
+    .post-content {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    .post-content h1, .post-content h2, .post-content h3 {
+        color: #FF6B35;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .post-content p {
+        margin-bottom: 20px;
+        color: #666;
+    }
+
+    .post-content img {
+        width: 100%;
+        border-radius: 10px;
+        margin: 30px 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .post-meta {
+        color: #999;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+        .post-navigation {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+</style>

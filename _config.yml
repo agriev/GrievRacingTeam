@@ -1,0 +1,73 @@
+# Site settings
+title: "Anton Griev Racing Team"
+description: "Профессиональная команда двухколёсного мотоспорта - питбайки, ШКМГ, мотокросс"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://antongriev.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Collections (if needed for blog posts or news)
+collections:
+  news:
+    output: true
+    permalink: /news/:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "post"
+
+# Site author
+author:
+  name: "Anton Griev Racing Team"
+  email: "info@antongrievracing.com"
+
+# Social links
+social:
+  facebook: "AntonGrievRacing"
+  instagram: "antongrievracing"
+  youtube: "AntonGrievRacing"
+
+# SEO settings
+lang: ru
+locale: ru_RU
+
+# GitHub Pages specific settings
+github_username: antongriev
+repository: antongriev/antongriev.github.io
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Timezone
+timezone: Europe/Belgrade

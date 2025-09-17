@@ -1,0 +1,27 @@
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Anton Griev Racing Team</h4>
+                <p data-translate="footer.teamDescription">Профессиональная команда двухколёсного мотоспорта</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-translate="common.quickLinks">Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="{{ '/about/' | relative_url }}" data-translate="nav.about">О команде</a></li>
+                    <li><a href="{{ '/racers/' | relative_url }}" data-translate="nav.racers">Гонщики</a></li>
+                    <li><a href="{{ '/championships/' | relative_url }}" data-translate="nav.championships">Чемпионаты</a></li>
+                    <li><a href="{{ '/sponsors/' | relative_url }}" data-translate="nav.sponsors">Спонсорам</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-translate="nav.contacts">Контакты</h4>
+                <p><span data-translate="common.email">Email</span>: info@antongrievracing.com</p>
+                <p><span data-translate="common.phone">Телефон</span>: +381 XX XXX XXXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: "%Y" }} Anton Griev Racing Team. <span data-translate="common.allRightsReserved">Все права защищены</span>.</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,32 @@
+<header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/60x60/FF6B35/FFFFFF?text=AGRT" alt="AGRT Logo">
+                <span class="logo-text">Anton Griev Racing Team</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %} data-translate="nav.home">Главная</a></li>
+                <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}class="active"{% endif %} data-translate="nav.about">О команде</a></li>
+                <li><a href="{{ '/services/' | relative_url }}" {% if page.url contains '/services/' %}class="active"{% endif %} data-translate="nav.services">Услуги</a></li>
+                <li><a href="{{ '/racers/' | relative_url }}" {% if page.url contains '/racers/' %}class="active"{% endif %} data-translate="nav.racers">Гонщики</a></li>
+                <li><a href="{{ '/championships/' | relative_url }}" {% if page.url contains '/championships/' %}class="active"{% endif %} data-translate="nav.championships">Наши чемпионаты</a></li>
+                <li><a href="{{ '/participation/' | relative_url }}" {% if page.url contains '/participation/' %}class="active"{% endif %} data-translate="nav.participation">Участие</a></li>
+                <li><a href="{{ '/sponsors/' | relative_url }}" {% if page.url contains '/sponsors/' %}class="active"{% endif %} data-translate="nav.sponsors">Спонсорам</a></li>
+                <li><a href="{{ '/contacts/' | relative_url }}" {% if page.url contains '/contacts/' %}class="active"{% endif %} data-translate="nav.contacts">Контакты</a></li>
+                <li class="language-switcher">
+                    <select id="languageSelect" onchange="if(window.languageManager) window.languageManager.changeLanguage(this.value)">
+                        <option value="ru">🇷🇺 RU</option>
+                        <option value="sr">🇷🇸 SR</option>
+                        <option value="en">🇺🇸 EN</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+</header>
